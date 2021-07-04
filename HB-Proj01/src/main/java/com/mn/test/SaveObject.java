@@ -22,7 +22,7 @@ public class SaveObject {
 		factory = cfg.buildSessionFactory();
 		ses = factory.openSession();
 		st = new Student();
-		st.setId(3);
+		st.setId(6);
 		st.setName("manu");
 		st.setCourse("java");
 
@@ -40,6 +40,8 @@ public class SaveObject {
 			} else {
 				tx.rollback();// internally calls con.roollback()
 			}
+			ses.close();
+			factory.close();
 		}
 
 	}

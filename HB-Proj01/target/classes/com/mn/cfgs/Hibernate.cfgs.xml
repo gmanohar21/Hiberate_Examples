@@ -2,16 +2,22 @@
 <!DOCTYPE hibernate-configuration PUBLIC
 	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-	
-	<hibernate-configuration>
+
+<hibernate-configuration>
 	<session-factory>
-	
-	<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-	<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:manu</property>
-	<property name="hibernate.connection.username">system</property>
-	<property name="hibernate.connection.password">tiger</property>
-	
-	<!-- mapping file name -->
-	<mapping resource="com/mn/entity/student.hbm.xml"/>
+		<!--oracle details -->
+		<!--  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property> 
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:manu</property>
+		<property name="hibernate.connection.username">system</property>
+		<property name="hibernate.connection.password">tiger</property> -->
+<!-- mysql driver -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/college</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">tiger</property>
+		<!-- hibernate properties -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!-- mapping file name -->
+		<mapping resource="com/mn/entity/student.hbm.xml" />
 	</session-factory>
-	</hibernate-configuration>
+</hibernate-configuration>
