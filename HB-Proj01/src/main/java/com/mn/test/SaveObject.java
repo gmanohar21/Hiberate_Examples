@@ -22,7 +22,7 @@ public class SaveObject {
 		factory = cfg.buildSessionFactory();
 		ses = factory.openSession();
 		st = new Student();
-		st.setId(2);
+		st.setId(3);
 		st.setName("manu");
 		st.setCourse("java");
 
@@ -36,7 +36,6 @@ public class SaveObject {
 			e.printStackTrace();
 		} finally {
 			if (flag == true) {
-
 				tx.commit();
 			} else {
 				tx.rollback();// internally calls con.roollback()
