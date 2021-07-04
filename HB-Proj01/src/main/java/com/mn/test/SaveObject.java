@@ -8,13 +8,15 @@ import org.hibernate.cfg.Configuration;
 import com.mn.entity.Student;
 
 public class SaveObject {
+
 	public static void main(String[] args) {
 		Configuration cfg = null;
 		SessionFactory factory = null;
 		Session ses = null;
 		Student st = null;
 		Transaction tx = null;
-		
+		boolean flag = false;
+
 		cfg = new Configuration();
 		cfg.configure("com/mn/cfgs/Hibernate.cfgs.xml");
 		factory = cfg.buildSessionFactory();
@@ -23,16 +25,23 @@ public class SaveObject {
 		st.setId(2);
 		st.setName("manu");
 		st.setCourse("java");
-		tx = ses.beginTransaction();
-		ses.save(st);
+
 		System.out.println("tx");
 		try {
-			
+			tx = ses.beginTransaction();// internally calls con.setAutoCommit(false) to begin transaction
+			// save object
+			ses.save(st);
+			flag = true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			if (flag == true) {
+
+				tx.commit();
+			} else {
+				tx.rollback();// internally calls con.roollback()
+			}
 		}
-		tx.commit();
-		
 
 	}
 
