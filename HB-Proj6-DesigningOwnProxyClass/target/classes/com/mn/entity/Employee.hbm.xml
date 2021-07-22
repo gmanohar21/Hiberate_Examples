@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mn.entity.UserEntity" table="employee"
+		lazy="true" proxy="com.mn.entity.IProxyClass">
+
+		<id name="id">
+			<column name="id"></column>
+		</id>
+		<property name="name">
+			<column name="Name" />
+		</property>
+		<property name="sal">
+			<column name="sal"></column>
+		</property>
+		<property name="departmentid">
+			<column name="departmentid"></column>
+		</property>
+
+	</class>
+
+</hibernate-mapping>
