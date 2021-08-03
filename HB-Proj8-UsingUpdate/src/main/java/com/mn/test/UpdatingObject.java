@@ -14,7 +14,6 @@ public class UpdatingObject {
 		Transaction tx = null;
 		SessionFactory factory = HibernateUtility.getSessionFactory();
 		Session ses = factory.openSession();
-
 		boolean flag = false;
 		Employee emp = null;
 		// from java 9 try with resource
