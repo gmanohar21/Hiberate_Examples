@@ -5,10 +5,9 @@
 
 <hibernate-mapping>
 
-	<class name="com.mn.entity.Employee" table="employee">
+	<class name="com.mn.entity.Employee"  dynamic-update="true">
 		<id name="id">
 			<column name="id"></column>
-			<generator class="increment"></generator>
 		</id>
 		<property name="name">
 			<column name="name"></column>

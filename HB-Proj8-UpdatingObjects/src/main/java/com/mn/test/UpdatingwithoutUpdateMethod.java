@@ -21,14 +21,14 @@ public class UpdatingwithoutUpdateMethod {
 		try (factory; ses) {
 			emp = new Employee();
 			//load object must
-			 emp = ses.get(Employee.class, 3);
+			 emp=ses.get(Employee.class, 5);
 
 			try {
 				System.out.println("LoadObjectsTest1.main()");
 				tx = ses.beginTransaction();
-				emp.setName("garish");
+				emp.setName("varish");
 				//removing update method
-			//	ses.update(emp);
+				ses.update(emp);
 				flag = true;
 			} catch (HibernateException he) {
 				flag = false;
